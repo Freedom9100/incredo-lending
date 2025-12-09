@@ -1,0 +1,27 @@
+# Ignore data files (CSVs are heavy and not needed for inference)
+data/
+
+# Ignore notebooks (dev only)
+notebooks/
+
+# Ignore git files
+.git/
+.gitignore
+
+# Ignore virtual environment
+.venv/
+venv/
+env/
+
+# Ignore cache
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Ignore IDE settings
+.vscode/
+.idea/
+
+# Ignore README and other docs not needed for runtime
+README.md
+
