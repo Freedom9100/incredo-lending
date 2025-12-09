@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИнКредо</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="static/js/script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-items container">
+            <span class="logo">
+                <span class="accent">Ин</span>Кредо
+            </span>
+    
+            <div class="contacts-content">
+                <a href="tel:+7 987-765-13-37" class="phone-number">+7 987-765-13-37</a>
+    
+                <a href="#" class="primary-button button">Заказать звонок</a>
+            </div>
+        </div>
+
+        <div class="banner-container container">
+            <div class="banner-content">
+                <h1>Быстрые кредиты <br> для ваших <br> финансовых нужд</h1>
+
+                <p>
+                    Наши кредитные услуги предлагают простой и удобный процесс заимствования, предоставляя вам необходимые средства в кратчайшие сроки для удовлетворения ваших финансовых потребностей.
+                </p>
+
+                <a href="#" class="secondary-button button">Подробнее</a>
+            </div>
+
+            <img src="../static/images/banner/banner_image.png" alt="banner-image">
+        </div>
+    </header>
+
+    <main>
+        <section class="aboutus">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Немного о нас</h2>
+                </div>
+
+                <div class="aboutus-container">
+                    <img src="../static/images/about_us/aboutus_image.png" alt="aboutus-image">
+
+                    <div class="aboutus-content">
+                        <h3>
+                            Мы помогаем получить кредит там, где другие отказывают уже 9 лет
+                        </h3>
+
+                        <p>
+                            <span><span class="accent">Ин</span>Кредо</span> — это не банк и не микрофинансовая организация. Мы — официальный кредитный брокер с лицензией ЦБ РФ.Работаем более чем с 40 банками и частными инвесторами. Подбираем предложения даже при наличии просрочек, судебных решений или нулевой кредитной истории.В 2024 году мы помогли получить кредиты на общую сумму более 2,3 млрд рублей
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="advantages section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наши преимущества</h2>
+                </div>
+
+                <div class="cards-container">
+                    <div class="advantage-card card">
+                        <img src="../static/icons/advantages/person_with_money.svg" alt="person-with-money">
+
+                        <h4>
+                            Личные цели
+                        </h4>
+
+                        <p>
+                            Персональные кредиты предоставляют заемщикам гибкость в использовании средств.
+                        </p>
+                    </div>
+                    <div class="advantage-card card">
+                        <img src="../static/icons/advantages/money.svg" alt="money">
+
+                        <h4>
+                            Бизнес кредит
+                        </h4>
+
+                        <p>
+                            Финансовая помощь предприятиям для различных целей.
+                        </p>
+                    </div>
+                    <div class="advantage-card card">
+                        <img src="../static/icons/advantages/auto.svg" alt="car">
+
+                        <h4>
+                            Кредит на авто
+                        </h4>
+
+                        <p>
+                            Возможности финансирования для лиц и предприятий для покупки автомобиля.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex-center">
+                    <a href="#" class="primary-button button">Подробнее</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="credit-calculator">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Узнайте вероятность одобрения за 20 секунд</h2>
+                    <p>Заполните 9 полей, а мы покажем вероятность на получения кредита в банке</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="creditForm" class="credit-form">
+                        <div class="form-section">
+                            <h2 class="section-title">Персональная информация</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="age">Возраст</label>
+                                    <input type="number" id="age" name="age" min="18" max="100" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="year_income">Годовой доход</label>
+                                    <input type="number" id="year_income" name="year_income" min="0" step="1000" required>
+                                    <span class="input-hint">В рублях</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="work_experience">Опыт работы</label>
+                                    <input type="number" id="work_experience" name="work_experience" min="0" max="100" step="0.1" required>
+                                    <span class="input-hint">Количество лет</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="home_status">Статус жилья</label>
+                                    <select id="home_status" name="home_status" required>
+                                        <option value="" disabled selected>Выберите статус жилья</option>
+                                        <option value="MORTGAGE">Ипотека</option>
+                                        <option value="OWN">Собственное</option>
+                                        <option value="RENT">Аренда</option>
+                                        <option value="OTHER">Другое</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h2 class="section-title">Кредитная информация</h2>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="credit_purpose">Цель кредита</label>
+                                    <select id="credit_purpose" name="credit_purpose" required>
+                                        <option value="" disabled selected>Выберите цель</option>
+                                        <option value="DEBTCONSOLIDATION">Рефинансирование долгов</option>
+                                        <option value="EDUCATION">Образование</option>
+                                        <option value="HOMEIMPROVEMENT">Ремонт жилья</option>
+                                        <option value="MEDICAL">Медицинские расходы</option>
+                                        <option value="PERSONAL">Личные нужды</option>
+                                        <option value="VENTURE">Бизнес</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="credit_grade">Кредитный рейтинг</label>
+                                    <select id="credit_grade" name="credit_grade" required>
+                                        <option value="" disabled selected>Выберите рейтинг</option>
+                                        <option value="A">A (Отличный)</option>
+                                        <option value="B">B (Очень хороший)</option>
+                                        <option value="C">C (Хороший)</option>
+                                        <option value="D">D (Средний)</option>
+                                        <option value="E">E (Удовлетворительный)</option>
+                                        <option value="F">F (Низкий)</option>
+                                        <option value="G">G (Очень низкий)</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="credit_amount_rub">Сумма заема</label>
+                                    <input type="number" id="credit_amount_rub" name="credit_amount_rub" min="0" max="50000000" step="10000" required>
+                                    <span class="input-hint">В рублях</span>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="credit_history_length">Длинна КИ</label>
+                                    <input type="number" id="credit_history_length" name="credit_history_length" min="0" max="50" required>
+                                    <span class="input-hint">Количество лет</span>
+                                </div>
+
+                                <div class="form-group radio-group">
+                                    <label>Был ли дефолт в прошлом?</label>
+                                    <div class="radio-options">
+                                        <label class="radio-label">
+                                            <input type="radio" name="cb_person_default" value="Y">
+                                            <span>Да</span>
+                                        </label>
+                                        <label class="radio-label">
+                                            <input type="radio" name="cb_person_default" value="N" required>
+                                            <span>Нет</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="btn-text">Рассчитать вероятность</span>
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <span class="btn-text">Очистить форму</span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="result-container" id="resultContainer">
+                        <div class="result-card">
+                            <h2 class="result-title">Результат оценки</h2>
+                            <div class="result-content">
+                                <div class="probability-display">
+                                    <div class="probability-value" id="probabilityValue"></div>
+                                    <div class="probability-bar">
+                                        <div class="probability-fill" id="probabilityFill"></div>
+                                    </div>
+                                </div>
+                                <div class="result-status" id="resultStatus">
+                                    <i class="status-icon" id="statusIcon"></i>
+                                    <div class="status-text" id="statusText"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наши услуги</h2>
+                </div>
+
+                <ul class="filter-container">
+                    <li>Все</li>
+                    <li>Новые</li>
+                    <li>Под залог авто </li>
+                    <li>Экспресс</li>
+                    <li>Низкий процент</li>
+                    <li>Рефинансирование</li>
+                </ul>
+
+                <div class="cards-container">
+
+                    <div class="service-card card">
+                        <img src="../static/images/services/service_image_1.png" alt="card-1">
+
+                        <h4>
+                            Потребительский кредит наличными
+                        </h4>
+
+                        <p>
+                            до 3 млн, от 6,9%, без справок
+                        </p>
+
+                        <a href="#" class="primary-button button">Узнать больше</a>
+                    </div>
+
+                    <div class="service-card card">
+                        <img src="../static/images/services/service_image_2.png" alt="card-2">
+
+                        <h4>
+                            Кредит под залог авто
+                        </h4>
+
+                        <p>
+                            оставляете авто себе, до 80% стоимости
+                        </p>
+
+                        <a href="#" class="primary-button button">Узнать больше</a>
+                    </div>
+
+                    <div class="service-card card">
+                        <img src="../static/images/services/service_image_3.png" alt="card-3">
+
+                        <h4>
+                            Кредит под залог недвижимости
+                        </h4>
+
+                        <p>
+                            до 15 млн, ставка от 4,9%
+                        </p>
+
+                        <a href="#" class="primary-button button">Узнать больше</a>
+                    </div>
+
+                    <div class="service-card card">
+                        <img src="../static/images/services/service_image_4.png" alt="card-4">
+
+                        <h4>
+                            Рефинансирование текущих кредитов
+                        </h4>
+
+                        <p>
+                            снизим платеж до 40%
+                        </p>
+
+                        <a href="#" class="primary-button button">Узнать больше</a>
+                    </div>
+
+                    <div class="service-card card">
+                        <img src="../static/images/services/service_image_5.png" alt="card-5">
+
+                        <h4>
+                            Кредит с плохой кредитной историей
+                        </h4>
+
+                        <p>
+                            одобряем 98 из 100 заявок
+                        </p>
+
+                        <a href="#" class="primary-button button">Узнать больше</a>
+                    </div>
+
+                    <div class="service-card card">
+                        <img src="../static/images/services/service_image_6.png" alt="card-6">
+
+                        <h4>
+                            Экспресс-кредит за 1 час
+                        </h4>
+
+                        <p>
+                            деньги на карту сразу после одобрения
+                        </p>
+
+                        <a href="#" class="primary-button button">Узнать больше</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="sales section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Акции</h2>
+
+                    <p>
+                        Специальные предложения с максимально выгодными условиями, которые мы выбили у банков-партнёров эксклюзивно для наших клиентов
+                    </p>
+                </div>
+
+                <div class="sales-container">
+                    <div class="aside-sale">
+                        <img src="../static/images/sales/sale_aside.png" alt="aside-sale">
+
+                        <a href="#" class="primary-button button">Подробнее</a>
+                    </div>
+
+                    <div class="level-sales">
+                        <div class="top-sale">
+                            <img src="../static/images/sales/sale_top.png" alt="top-sale">
+
+                            <a href="#" class="primary-button button">Подробнее</a>
+                        </div>
+
+                        <div class="bottom-sale">
+                            <img src="../static/images/sales/sale_bottom.png" alt="bottom-sale">
+
+                            <a href="#" class="primary-button button">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="experts">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Наши эксперты</h2>
+
+                    <p>
+                        Команда кредитных брокеров с общим стажем более 47 лет — бывшие сотрудники Сбера, Тинькофф и Альфы, которые знают, как одобрить кредит там, где все остальные отказывают
+                    </p>
+                </div>
+
+                <div class="cards-container">
+
+                    <div class="expert-card card">
+                        <img src="../static/images/experts/expert_1.png" alt="expert-1">
+
+                        <div class="expert-description">
+                            <h4>
+                                Дмитрий Соколов
+                            </h4>
+
+                            <p>
+                                Специалист по залоговым кредитам, стаж 9 лет
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="expert-card card">
+                        <img src="../static/images/experts/expert_2.png" alt="expert-2">
+
+                        <div class="expert-description">
+                            <h4>
+                                Анна Морозова
+                            </h4>
+
+                            <p>
+                                Эксперт по рефинансированию, стаж 8 лет
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="expert-card card">
+                        <img src="../static/images/experts/expert_3.png" alt="expert-3">
+
+                        <div class="expert-description">
+                            <h4>
+                                Михаил Орлов
+                            </h4>
+
+                            <p>
+                                Руководитель отдела одобрений, бывший сотрудник Сбера
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Свежие новости</h2>
+
+                    <p>
+                        Специальные предложения с максимально выгодными условиями, которые мы выбили у банков-партнёров эксклюзивно для наших клиентов
+                    </p>
+                </div>
+
+                <div class="shaffle-container">
+                    <img src="../static/images/news/shaffle_1.png" alt="shffle-1">
+
+                    <div class="shaffle-content">
+                        <h3>
+                            Ставка 4,9%
+                        </h3>
+
+                        <p>
+                            С 10 февраля ставки по кредитам под залог недвижимости снижены до 4,9% Теперь максимальная сумма — 15 млн рублей на срок до 20 лет. Программу уже запустили Тинькофф и Совкомбанк. Это самая низкая ставка в России
+                        </p>
+
+                        <span class="shuffle-number">01</span>
+                    </div>
+                </div>
+
+                <div class="shaffle-container">
+                    <img src="../static/images/news/shaffle_2.png" alt="shffle-2">
+
+                    <div class="shaffle-content">
+                        <h3>
+                            Просрочки до 180 дней
+                        </h3>
+
+                        <p>
+                            Мы постоянно добиваемся для вас новых условий — здесь вы всегда найдёте самые свежие снижения ставок, запуски программ и наши достижения
+                        </p>
+
+                        <span class="shuffle-number">02</span>
+                    </div>
+                </div>
+
+                <div class="shaffle-container">
+                    <img src="../static/images/news/shaffle_3.png" alt="shffle-3">
+
+                    <div class="shaffle-content">
+                        <h3>
+                            ТОП-3 России
+                        </h3>
+
+                        <p>
+                            Вошли в ТОП-3 кредитных брокеров России по версии «Комсомольской правды» Независимый рейтинг февраля 2025. Мы обошли «Национальный кредит» и «Фингуру»
+                        </p>
+
+                        <span class="shuffle-number">03</span>
+                    </div>
+                </div>
+
+                <div class="shaffle-container">
+                    <img src="../static/images/news/shaffle_4.png" alt="shffle-4">
+
+                    <div class="shaffle-content">
+                        <h3>
+                            Деньги за 27 минут
+                        </h3>
+
+                        <p>
+                            Новый экспресс-кредит: деньги на карту за 27 минут Без звонков, без фото, только паспорт. Сумма до 700 000 ₽, ставка от 7,9%. За первые сутки одобрено 214 заявок
+                        </p>
+
+                        <span class="shuffle-number">04</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="feedback section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Отзывы клиентов</h2>
+
+                    <p>
+                        Более 18 000 человек уже решили свои финансовые вопросы с нами — вот что они говорят сразу после получения денег. Реальные отзывы с Яндекса и нашего сайта, без приукрашивания
+                    </p>
+                </div>
+
+                <div class="slider-wrapper">
+                    <div class="slider-container" id="sliderTrack">
+
+                        <div class="slider-item active">
+                            <div class="user-info">
+                                <div class="user-details">
+                                    <img src="../static/images/feedback/feedback_1.png" alt="person-1">
+
+                                    <div class="user-content">
+                                        <h4>Анастасия М.</h4>
+
+                                        <span class="user-desctiption">
+                                            Казань, 26 лет
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rate-content">
+                                    <img src="../static/icons/feedback/star.svg" alt="star">
+
+                                    <span class="rate">4.6/5.0</span>
+                                </div>
+                            </div>
+
+                            <div class="depcription">
+                                <p>
+                                    Девочки, я до сих пор не верю: с чёрной кредитной историей, просрочками 150+ дней и судами мне за 12 минут ночью одобрили 850 000 под 11,4% в Тинькофф, без справок и залога — просто заполнила форму в 2 ночи, Анна перезвонила, всё оформили, и уже в 14:17 деньги были на карте; теперь живу в своей квартире, делаю ремонт мечты и плачу всего 21 300 в месяц вместо тех бешеных процентов, которые мне светили везде. Спасибо «Кредитному щиту», вы реально спасли мне жизнь
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="slider-item">
+                            <div class="user-info">
+                                <div class="user-details">
+                                    <img src="../static/images/feedback/feedback_2.png" alt="person-2">
+
+                                    <div class="user-content">
+                                        <h4>Маргарита И.</h4>
+
+                                        <span class="user-desctiption">
+                                            Казань, 29 лет
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rate-content">
+                                    <img src="../static/icons/feedback/star.svg" alt="star">
+
+                                    <span class="rate">4.9/5.0</span>
+                                </div>
+                            </div>
+
+                            <div class="depcription">
+                                <p>
+                                    У меня было 11 активных микрозаймов, общий долг 680к, платила по 94к в месяц и просто выживала на дошираке. Написала сюда в истерике в 4 утра. Дмитрий за 40 минут нашёл мне рефинансирование в Почта Банке: закрыли все 11 займов, дали один кредит под 12,1%, платёж упал до 28к. Впервые за год я купила себе нормальную еду и даже сходила в кино. Это не брокер, это волшебники, честное слово
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="slider-item">
+                            <div class="user-info">
+                                <div class="user-details">
+                                    <img src="../static/images/feedback/feedback_3.png" alt="person-3">
+
+                                    <div class="user-content">
+                                        <h4>Виктория С.</h4>
+
+                                        <span class="user-desctiption">
+                                            Казань, 22 лет
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <div class="rate-content">
+                                    <img src="../static/icons/feedback/star.svg" alt="star">
+
+                                    <span class="rate">5.0/5.0</span>
+                                </div>
+                            </div>
+
+                            <div class="depcription">
+                                <p>
+                                    Я студентка, официально нигде не работаю, КИ нулевая, а нужно было 350к на операцию коту (да, я серьёзно). Везде писали «минимум 6 месяцев стажа». Здесь просто спросила в чате: «можно без работы?» — ответили «можно». Через 34 минуты деньги от МТС-Банка на карте под 14,9%. Кот уже прыгает по квартире, а я до сих пор в шоке, что это реально работает в 2025 году
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <button class="arrow left" id="prevSlide" type="button">
+                        <img src="../static/icons/feedback/arrow_left.svg" alt="left-arrow">
+                    </button>
+
+                    <button class="arrow right" id="nextSlide" type="button">
+                        <img src="../static/icons/feedback/arrow_right.svg" alt="right-arrow">
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Частые вопросы</h2>
+                    <p>
+                        Разобрали самые популярные сомнения и страхи наших клиентов — ответы честные, без воды и банковского канцелярита. Всё, что вы хотели спросить, но стеснялись
+                    </p>
+                </div>
+
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Нужно ли приезжать в офис?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Нет, всё онлайн</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Работаете ли вы с просрочками?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Да, даже с открытыми</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Какие документы нужны?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Только паспорт РФ</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Сколько времени занимает одобрение?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>От 7 минут до 2 часов</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <h3>Есть ли скрытые комиссии?</h3>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Нет, мы ничего не берём с клиента</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="partners">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Партнеры</h2>
+
+                    <p>
+                        Работаем только с проверенными банками и финансовыми организациями напрямую. Никаких посредников — именно поэтому мы получаем для вас ставки и условия, которых нет в открытом доступе
+                    </p>
+                </div>
+
+                <div class="partners-container">
+                    <img src="../static/images/partners/partner_1.png" alt="partner-1">
+                    <img src="../static/images/partners/partner_2.png" alt="partner-2">
+                    <img src="../static/images/partners/partner_3.png" alt="partner-3">
+                    <img src="../static/images/partners/partner_4.png" alt="partner-4">
+                    <img src="../static/images/partners/partner_5.png" alt="partner-5">
+                    <img src="../static/images/partners/partner_6.png" alt="partner-6">
+                </div>
+            </div>
+        </section>
+
+        <section class="subscribe section-bg">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Получить деньги</h2>
+                </div>
+
+                <div class="subscribe-container">
+                    <div class="subscribe-aside">
+                        <img src="../static/images/subscribe/subscribe_image.png" alt="women_hand_up">
+
+                        <p>
+                            Хватит переплачивать — каждую неделю наши подписчики получают самые низкие ставки и закрытые программы банков, которых нет в открытом доступе, и берут деньги на 2–4% дешевле всех остальных. Заполни форму и уже скоро держи одобренный кредит мечты.
+                        </p>
+                    </div>
+
+                    <form class="subscribe-form">
+                        <label>Ваше ФИО</label>
+
+                        <input type="text" placeholder="Иванов Иван Иванович">
+
+                        <label>Номер телефона</label>
+
+                        <input type="tel" placeholder="+7 999-123-45-67">
+
+                        <label>Email адрес</label>
+
+                        <input type="email" placeholder="ivanov_i@mail.ru">
+
+                        <button type="submit" class="btn btn-primary subscribe-btn">Подписаться</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacts-mockup">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Контакты</h2>
+                </div>
+
+                <div class="browser-mockup">
+                    <div class="mockup-header">
+                        <div class="window-controls">
+                            <span class="control red"></span>
+                            <span class="control yellow"></span>
+                            <span class="control green"></span>
+                        </div>
+                        
+                        <div class="address-bar">
+                            incredo.app
+                        </div>
+
+                        <div class="window-actions">
+                            <i data-lucide="chevron-left"></i>
+                            <i data-lucide="chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="mockup-body">
+                        <div class="mockup-sidebar">
+                            <div class="sidebar-pill"></div>
+                            
+                            <div class="sidebar-list">
+                                <div class="sidebar-item">
+                                    <span class="shape circle"></span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span class="shape square"></span>
+                                    <span class="line"></span>
+                                </div>
+                                <div class="sidebar-item">
+                                    <span class="shape triangle"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mockup-main">
+                            <div class="map-container">
+                                <img src="../static/images/contact_us/map_image.png" alt="map-image">
+                            </div>
+
+                            <div class="information-container">
+                                <div class="contact-container">
+                                    <span class="contact-title">Адрес</span>
+
+                                    <span class="contact-desctiption">
+                                        ул. Родины, 7А, Казань, Респ. Татарстан, 420087
+                                    </span>
+                                </div>
+
+                                <div class="contact-container">
+                                    <span class="contact-title">Почта</span>
+
+                                    <span class="contact-desctiption">
+                                        incredo.agency@credit.com
+                                    </span>
+                                </div>
+
+                                <div class="contact-container">
+                                    <span class="contact-title">Режим работы</span>
+
+                                    <ul class="contact-desctiption">
+                                        <li>Пн — Вс</li>
+                                        <li>С 8:00 — 20:00</li>
+                                        <li>Обед</li>
+                                        <li>12:00 — 13:00</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container container">
+            <div class="footer-column">
+                <span class="logo">
+                    <span class="accent">Ин</span>Кредо
+                </span>
+
+                <p>
+                    Наша миссия — расширять возможности отдельных лиц и предприятий, предоставляя им финансовые ресурсы, необходимые для достижения их целей.
+                </p>
+
+                <span>
+                    ©Тухватуллин Эмиль Радикович | 325 Веб
+                </span>
+            </div>
+
+            <div class="footer-column">
+                <h4 class="footer-title">Наши сервисы</h4>
+
+                <ul class="footer-list">
+                    <li>Личный кредит</li>
+                    <li>Бизнес кредит</li>
+                    <li>Образовательный кредит</li>
+                    <li>Автомобильный кредит</li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h4>Контакты</h4>
+
+                <ul class="footer-list">
+                    <li>
+                        <img src="../static/icons/footer/phone_icon.svg" alt="phone-icon">
+
+                        +7 987-765-13-37
+                    </li>
+
+                    <li>
+                        <img src="../static/icons/footer/mail_icon.svg" alt="email-icon">
+
+                        incredo.agency@credit.com
+                    </li>
+
+                    <li>
+                        <img src="../static/icons/footer/map_icon.svg" alt="map-icon">
+
+                        Казань <br>
+                        ул. Родины 7А <br>
+                        420087
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
