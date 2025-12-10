@@ -55,7 +55,6 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     min-height: 100vh;
-    padding: 0; /* Removed padding from body to let sections allow full width */
 }
 
 /* Typography Global */
@@ -275,6 +274,373 @@ section {
 
 .advantage-card {
     text-align: center;
+}
+
+/* Заголовок калькулятора */
+.calculator-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--text-primary);
+}
+
+.calculator-header h2 {
+    font-family: 'Raleway-Bold', sans-serif; /* Explicitly ensure calc uses new font */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.calculator-header p {
+    font-family: 'DMSans-Regular', sans-serif;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+}
+
+/* Контейнер формы */
+.form-container {
+    background: transparent; 
+    border-radius: var(--border-radius);
+    padding: 0; 
+    margin-bottom: 2rem;
+}
+
+/* Форма */
+.credit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Секции формы */
+.form-section {
+    background: var(--bg-color); 
+    border-radius: 24px; 
+    padding: 3rem;
+}
+
+.form-section .section-title {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+/* Сетка формы */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+/* Группы полей */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    margin-left: 1rem;
+}
+
+.form-group input,
+.form-group select {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--primary-color);
+    border-radius: var(--input-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: white;
+    color: var(--text-primary);
+    font-family: 'DMSans-Regular', sans-serif;
+}
+
+.form-group select {
+    appearance: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(38, 70, 83, 0.1);
+}
+
+.input-hint {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-style: italic;
+    margin-left: 1rem;
+}
+
+/* Радио кнопки */
+.radio-options {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #94a3b8;
+    border-radius: var(--input-radius);
+    transition: var(--transition);
+    background: white;
+}
+
+.radio-label input[type="radio"] {
+    width: 1.25rem;
+    height: 1.25rem;
+    cursor: pointer;
+    accent-color: var(--primary-color);
+    box-shadow: none;
+}
+
+.radio-label input[type="radio"]:checked + span {
+    color: var(--primary-color);
+}
+
+.radio-label span {
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+/* Кнопки действий */
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: .75rem 2rem;
+    border-radius: var(--input-radius);
+    font-family: 'DMSans-Regular', sans-serif;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-secondary {
+    position: relative;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    overflow: hidden;
+    transition: .3s;
+    background-color: transparent;
+}
+
+.btn-secondary::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: var(--primary-color);
+    transition: left .4s ease-in-out;
+    z-index: -1;
+}
+
+.btn-secondary:hover::before {
+    left: 0;
+}
+
+.btn-secondary:hover {
+    color: white;
+}
+
+/* Контейнер результата */
+.result-container {
+    margin-top: 2rem;
+    animation: slideIn 0.5s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    background: var(--card-bg);
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.result-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+.result-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Отображение вероятности */
+.probability-display {
+    text-align: center;
+}
+
+.probability-label {
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+}
+
+.probability-value {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    animation: countUp 1s ease;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.probability-bar {
+    width: 100%;
+    height: 2rem;
+    background: var(--border-color);
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.probability-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
+    border-radius: 1rem;
+    transition: width 1s ease;
+    position: relative;
+}
+
+.probability-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Статус результата */
+.result-status {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    background: white;
+}
+
+.status-icon {
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.status-text {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+/* Статусы */
+.result-status.success {
+    background: rgba(16, 185, 129, 0.1);
+    border: 2px solid var(--success-color);
+}
+
+.result-status.success .status-icon {
+    color: var(--success-color);
+    fill: white;
+}
+
+.result-status.success .status-text {
+    color: var(--success-color);
+}
+
+.result-status.warning {
+    background: rgba(245, 158, 11, 0.1);
+    border: 2px solid var(--warning-color);
+}
+
+.result-status.warning .status-icon {
+    color: var(--warning-color);
+    fill: white;
+}
+
+.result-status.warning .status-text {
+    color: var(--warning-color);
+}
+
+.result-status.danger {
+    background: rgba(239, 68, 68, 0.1);
+    border: 2px solid var(--danger-color);
+}
+
+.result-status.danger .status-icon {
+    color: var(--danger-color);
+    fill: white;
+}
+
+.result-status.danger .status-text {
+    color: var(--danger-color);
 }
 
 /* Services */
@@ -498,7 +864,7 @@ section {
 }
 
 .slider-container {
-    width: 750px; /* Ширина одного отзыва + отступы */
+    width: 750px;
     overflow: hidden;
     display: flex;
     border-radius: var(--border-radius);
@@ -507,7 +873,7 @@ section {
 }
 
 .slider-item {
-    min-width: 100%; /* Каждый слайд занимает 100% контейнера */
+    min-width: 100%;
     padding: 3rem;
     box-sizing: border-box;
 }
@@ -559,7 +925,7 @@ section {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: var(--success-color); /* Зеленый цвет для рейтинга */
+    color: var(--success-color);
     font-family: 'Raleway-Medium';
     font-size: 1.25rem;
 }
@@ -775,7 +1141,7 @@ section {
 
 .mockup-sidebar {
     width: 25%;
-    background: #7FC1B1; /* Using var(--faq-bg) darker variant or explicitly matching mock */
+    background: #7FC1B1;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -951,375 +1317,39 @@ footer {
     align-items: flex-start;
 }
 
-/* ------------------------------------------------------------------ */
-/* CALCULATOR STYLES (PRESERVED) - WITH SHADOWS */
-/* ------------------------------------------------------------------ */
-
-/* Заголовок калькулятора */
-.calculator-header {
-    text-align: center;
-    margin-bottom: 3rem;
-    color: var(--text-primary);
-}
-
-.calculator-header h2 {
-    font-family: 'Raleway-Bold', sans-serif; /* Explicitly ensure calc uses new font */
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-}
-
-.calculator-header p {
-    font-family: 'DMSans-Regular', sans-serif;
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-}
-
-/* Контейнер формы */
-.form-container {
-    background: transparent; 
-    border-radius: var(--border-radius);
-    padding: 0; 
-    margin-bottom: 2rem;
-}
-
-/* Форма */
-.credit-form {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Секции формы */
-.form-section {
-    background: var(--bg-color); 
-    border-radius: 24px; 
-    padding: 3rem;
-    /* Calculator sections keep their style, maybe shadow if originally intended, but prompt said "calculator block" - I'll assume the form inputs/container logic */
-}
-
-/* Note: Calculator specific section titles */
-.form-section .section-title {
-    font-size: 1.75rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 2rem;
-    padding-bottom: 0.75rem;
-    border-bottom: 2px solid var(--primary-color);
-}
-
-/* Сетка формы */
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-/* Группы полей */
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.form-group label {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 0.95rem;
-    margin-left: 1rem;
-}
-
-.form-group input,
-.form-group select {
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--primary-color);
-    border-radius: var(--input-radius);
-    font-size: 1rem;
-    transition: var(--transition);
-    background: white;
-    color: var(--text-primary);
-    font-family: 'DMSans-Regular', sans-serif;
-}
-
-.form-group select {
-    appearance: none;
-}
-
-.form-group input:focus,
-.form-group select:focus {
-    outline: none;
-    border-color: var(--primary-color);
-    box-shadow: 0 0 0 3px rgba(38, 70, 83, 0.1);
-}
-
-.input-hint {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    font-style: italic;
-    margin-left: 1rem;
-}
-
-/* Радио кнопки */
-.radio-options {
-    display: flex;
-    gap: 1.5rem;
-}
-
-.radio-label {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    cursor: pointer;
-    padding: 0.5rem 1.5rem;
-    border: 1px solid #94a3b8;
-    border-radius: var(--input-radius);
-    transition: var(--transition);
-    background: white;
-}
-
-.radio-label input[type="radio"] {
-    width: 1.25rem;
-    height: 1.25rem;
-    cursor: pointer;
-    accent-color: var(--primary-color);
-    box-shadow: none;
-}
-
-.radio-label input[type="radio"]:checked + span {
-    color: var(--primary-color);
-}
-
-.radio-label span {
-    font-size: 1rem;
-    transition: var(--transition);
-}
-
-/* Кнопки действий */
-.form-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.btn {
-    display: inline-block;
-    padding: .75rem 2rem;
-    border-radius: var(--input-radius);
-    font-family: 'DMSans-Regular', sans-serif;
-    cursor: pointer;
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: white;
     border: none;
-    text-decoration: none;
-    font-size: 1rem;
-    background: transparent;
-}
-
-.btn-primary {
-    background-color: var(--primary-color);
-    color: white;
-}
-
-.btn-secondary {
-    position: relative;
-    border: 2px solid var(--primary-color);
-    color: var(--primary-color);
-    overflow: hidden;
-    transition: .3s;
-    background-color: transparent; /* Важно для прозрачности */
-}
-
-.btn-secondary::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: -100%;
-    background-color: var(--primary-color);
-    transition: left .4s ease-in-out;
-    z-index: -1;
-}
-
-.btn-secondary:hover::before {
-    left: 0;
-}
-
-.btn-secondary:hover {
-    color: white;
-}
-
-/* Контейнер результата */
-.result-container {
-    margin-top: 2rem;
-    animation: slideIn 0.5s ease;
-}
-
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.result-card {
-    background: var(--card-bg);
-    border-radius: 24px;
-    padding: 2rem;
-    box-shadow: var(--shadow-md); /* Keeping shadow here */
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.result-title {
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-}
-
-.result-content {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-}
-
-/* Отображение вероятности */
-.probability-display {
-    text-align: center;
-}
-
-.probability-label {
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    margin-bottom: 1rem;
-}
-
-.probability-value {
-    font-size: 4rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-    animation: countUp 1s ease;
-}
-
-@keyframes countUp {
-    from {
-        opacity: 0;
-        transform: scale(0.5);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.probability-bar {
-    width: 100%;
-    height: 2rem;
-    background: var(--border-color);
-    border-radius: 1rem;
-    overflow: hidden;
-    position: relative;
-}
-
-.probability-fill {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--primary-light) 100%);
-    border-radius: 1rem;
-    transition: width 1s ease;
-    position: relative;
-}
-
-.probability-fill::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        transform: translateX(-100%);
-    }
-    100% {
-        transform: translateX(100%);
-    }
-}
-
-/* Статус результата */
-.result-status {
+    border-radius: 50%;
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    background: white;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.status-icon {
-    font-size: 2rem;
-    width: 3rem;
-    height: 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.scroll-to-top:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-3px);
 }
 
-.status-text {
-    font-size: 1.25rem;
-    font-weight: 600;
+.scroll-to-top.show {
+    opacity: 1;
+    visibility: visible;
 }
 
-/* Статусы */
-.result-status.success {
-    background: rgba(16, 185, 129, 0.1);
-    border: 2px solid var(--success-color);
-}
-
-.result-status.success .status-icon {
-    color: var(--success-color);
-    fill: white;
-}
-
-.result-status.success .status-text {
-    color: var(--success-color);
-}
-
-.result-status.warning {
-    background: rgba(245, 158, 11, 0.1);
-    border: 2px solid var(--warning-color);
-}
-
-.result-status.warning .status-icon {
-    color: var(--warning-color);
-    fill: white;
-}
-
-.result-status.warning .status-text {
-    color: var(--warning-color);
-}
-
-.result-status.danger {
-    background: rgba(239, 68, 68, 0.1);
-    border: 2px solid var(--danger-color);
-}
-
-.result-status.danger .status-icon {
-    color: var(--danger-color);
-    fill: white;
-}
-
-.result-status.danger .status-text {
-    color: var(--danger-color);
+.scroll-to-top svg {
+    width: 24px;
+    height: 24px;
 }

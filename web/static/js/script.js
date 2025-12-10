@@ -182,6 +182,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }));
     }
+
+    // --- ЛОГИКА КНОПКИ "НАВЕРХ" ---
+    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+    const aboutUsSection = document.querySelector('.aboutus');
+
+    if (scrollToTopBtn && aboutUsSection) {
+        window.addEventListener('scroll', () => {
+            // Вычисляем нижнюю границу секции aboutus
+            const aboutUsBottom = aboutUsSection.offsetTop + aboutUsSection.offsetHeight;
+            
+            // Показываем кнопку, если мы прокрутили ниже секции aboutus
+            if (window.scrollY > aboutUsBottom) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
 
 // Обработчик сброса формы
